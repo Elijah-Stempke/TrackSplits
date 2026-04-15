@@ -55,11 +55,10 @@ export default function CalculatorScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
 
+      {/* Sticky header — lives outside ScrollView so it never scrolls away */}
+      <View style={styles.stickyHeader}>
         <Text style={styles.header}>Split Calculator</Text>
-
-        {/* Global pace display */}
         <View style={styles.paceCard}>
           <View style={styles.paceItem}>
             <Text style={styles.paceLabel}>per mile</Text>
@@ -71,6 +70,9 @@ export default function CalculatorScreen() {
             <Text style={styles.paceValue}>{formatTime(pacePerKm)}</Text>
           </View>
         </View>
+      </View>
+
+      <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
 
         <Text style={styles.hint}>Hold slider to zoom in · Tap time to type</Text>
 
@@ -136,8 +138,14 @@ export default function CalculatorScreen() {
 
 const styles = StyleSheet.create({
   container:   { flex: 1, backgroundColor: '#f8f9fa' },
-  scroll:      { padding: 16, paddingBottom: 48 },
-  header:      { fontSize: 26, fontWeight: '800', color: '#1a1a2e', marginBottom: 14 },
+  stickyHeader: {
+    paddingHorizontal: 16,
+    paddingTop: 12,
+    paddingBottom: 8,
+    backgroundColor: '#f8f9fa',
+  },
+  scroll:      { padding: 16, paddingTop: 4, paddingBottom: 48 },
+  header:      { fontSize: 26, fontWeight: '800', color: '#1a1a2e', marginBottom: 10 },
   hint:        { fontSize: 12, color: '#adb5bd', marginBottom: 14, textAlign: 'center' },
 
   paceCard: {
