@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Track Splits",
+    "slug": "track-splits",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "com.tracksplits.app"
+    },
+    "platforms": [
+      "android",
+      "ios",
+      "web"
+    ],
+    "newArchEnabled": false,
+    "extra": {
+      "eas": {
+        "projectId": "9dd1e816-8762-425e-b09e-ffc82375e7bd"
+      }
+    }
+  }
+}
